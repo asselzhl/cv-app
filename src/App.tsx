@@ -1,8 +1,27 @@
+import { Route, Routes } from "react-router-dom";
+import { Home } from "./pages/Home";
+import { Inner } from "./pages/Inner";
+import { routePaths } from "./routePaths";
+
 function App() {
+  const routesConfig = [
+    {
+      path: routePaths.home,
+      element: <Home />,
+    },
+    {
+      path: routePaths.inner,
+      element: <Inner />,
+    },
+  ];
   return (
-    <>
-      <h1 className="text-[#3e8]">Test</h1>
-    </>
+    <Routes>
+      {routesConfig.map((route) => {
+        return (
+          <Route key={route.path} path={route.path} element={route.element} />
+        );
+      })}
+    </Routes>
   );
 }
 
