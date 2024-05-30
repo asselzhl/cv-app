@@ -14,3 +14,7 @@ body {
   background-position: center;
   background-size: cover;
 }
+.filter-item {
+  margin: 5px;
+  padding: 10px;
+}
