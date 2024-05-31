@@ -23,6 +23,7 @@
     "react-router-hash-link": "^2.4.3"
   },
   "devDependencies": {
+    "@material-tailwind/react": "^2.1.9",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/isotope-layout": "^3.0.13",
     "@types/react": "^18.2.66",
