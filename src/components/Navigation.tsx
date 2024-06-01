@@ -11,6 +11,11 @@ import {
 	FaRegComment,
 } from 'react-icons/fa6';
 
+const style = {
+	list: `flex flex-col gap-y-10`,
+	hashLink: `flex items-center gap-x-7 text-gray-500 hover:text-[#009E60] duration-300`,
+};
+
 type NavItemID =
 	| 'about'
 	| 'education'
@@ -66,14 +71,15 @@ const navList: NavListItem[] = [
 export const Navigation = () => {
 	return (
 		<nav>
-			<ul className='flex flex-col gap-y-10'>
+			<ul className={style.list}>
 				{navList.map((listItem) => {
 					return (
-						<li
-							key={listItem.text}
-							className='flex items-center gap-x-5 text-gray-500'
-						>
-							<HashLink smooth to={`#${listItem.id}`}>
+						<li key={listItem.text}>
+							<HashLink
+								className={style.hashLink}
+								smooth
+								to={`#${listItem.id}`}
+							>
 								{listItem.icon}
 								<span>{listItem.text}</span>
 							</HashLink>

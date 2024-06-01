@@ -2,7 +2,7 @@ import React from 'react';
 
 export const PortfolioInfo = () => {
 	return (
-		<div>
+		<div className='bg-white absolute h-full border p-5'>
 			<h4 className='font-bold text-[#009E60]'>Some text</h4>
 			<p>
 				Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In

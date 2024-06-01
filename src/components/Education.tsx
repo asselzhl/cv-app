@@ -1,6 +1,10 @@
 import React from 'react';
 import { EducationTimeline } from './EducationTimeline';
 
+const style = {
+	wrapper: `h-[30vh] overflow-scroll`,
+};
+
 interface EducationItem {
 	date: number;
 	title: string;
@@ -42,7 +46,7 @@ const educationList: EducationItem[] = [
 
 export const Education = () => {
 	return (
-		<div className='h-[30vh] overflow-scroll'>
+		<div className={style.wrapper}>
 			{educationList.map((education) => {
 				return <EducationTimeline education={education} />;
 			})}

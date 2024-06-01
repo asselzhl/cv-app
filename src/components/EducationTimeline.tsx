@@ -27,18 +27,10 @@ export const EducationTimeline = ({ education }: EducationItemProps) => {
 					<TimelineIcon className='text-[#009E60] bg-transparent font-bold leading-none'>
 						{education.date}
 					</TimelineIcon>
-					<Typography variant='h6' color='blue-gray' className='leading-none'>
-						{education.title}
-					</Typography>
+					<Typography variant='h6'>{education.title}</Typography>
 				</TimelineHeader>
 				<TimelineBody className='pb-8'>
-					<Typography
-						variant='small'
-						color='gray'
-						className='font-normal text-gray-600'
-					>
-						{education.text}
-					</Typography>
+					<Typography variant='small'>{education.text}</Typography>
 				</TimelineBody>
 			</TimelineItem>
 		</Timeline>

@@ -1,11 +1,16 @@
 import React from 'react';
-import { FaAngleLeft } from 'react-icons/fa6';
+import { FaAngleLeft, FaBars } from 'react-icons/fa6';
 
-type ButtonMapKeys = 'knowMore' | 'goBack';
+type ButtonMapKeys = 'knowMore' | 'goBack' | 'togglePanel';
 interface ButtonMapValues {
 	text: string;
 	style: string;
 	icon?: JSX.Element;
+}
+
+interface ButtonProps {
+	buttonConfig: string;
+	onClick?: () => void;
 }
 
 const buttonMap: Record<ButtonMapKeys, ButtonMapValues> = {
@@ -20,12 +25,17 @@ const buttonMap: Record<ButtonMapKeys, ButtonMapValues> = {
 			'text-white flex items-center gap-x-2.5 hover:bg-[#009E60] duration-300 rounded py-[10px] px-[20px]',
 		icon: <FaAngleLeft />,
 	},
+	togglePanel: {
+		text: '',
+		style: 'absolute right-[-35px] bg-[#222935] p-3 rounded-r-lg',
+		icon: <FaBars color='white' />,
+	},
 };
 
-export const Button = ({ buttonConfig }) => {
+export const Button = ({ buttonConfig, onClick }: ButtonProps) => {
 	const config: ButtonMapValues = buttonMap[buttonConfig];
 	return (
-		<button className={config.style}>
+		<button className={config.style} onClick={onClick}>
 			{config.icon}
 			<span>{config.text}</span>
 		</button>
