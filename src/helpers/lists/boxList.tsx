@@ -1,3 +1,4 @@
+import { Skills } from '../../components/Skills/Skills';
 import { About } from '../../components/About/About';
 import { Contacts } from '../../components/Contacts/Contacts';
 import { Education } from '../../components/Education/Education';
@@ -38,7 +39,7 @@ export const boxList: BoxMapValues[] = [
 	},
 	{
 		title: 'Skills',
-		content: <About />,
+		content: <Skills />,
 		id: 'skills',
 	},
 	{

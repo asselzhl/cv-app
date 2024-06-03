@@ -12,7 +12,7 @@ import {
 interface EducationItem {
 	date: number;
 	title: string;
-	text: string;
+	description: string;
 }
 interface EducationItemProps {
 	education: EducationItem;
@@ -30,7 +30,7 @@ export const EducationTimeline = ({ education }: EducationItemProps) => {
 					<Typography variant='h6'>{education.title}</Typography>
 				</TimelineHeader>
 				<TimelineBody className='pb-8'>
-					<Typography variant='small'>{education.text}</Typography>
+					<Typography variant='small'>{education.description}</Typography>
 				</TimelineBody>
 			</TimelineItem>
 		</Timeline>

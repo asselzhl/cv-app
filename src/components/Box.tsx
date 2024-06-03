@@ -14,7 +14,7 @@ type BoxMapKeys =
 	| 'feedbacks';
 interface BoxMapValues {
 	title: string;
-	content; // TODO: type?
+	content: JSX.Element;
 	id: BoxMapKeys;
 }
 

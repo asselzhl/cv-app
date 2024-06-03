@@ -1,19 +1,46 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { EducationTimeline } from './EducationTimeline';
-import { educationList } from '../../helpers/lists/educationList';
+import { useAppDispatch } from '../../store/store';
+import { fetchEducations } from '../../store/education/educationThunk';
+import { useSelector } from 'react-redux';
+import {
+	getEducationsList,
+	getEducationsStateStatus,
+} from '../../store/selectors';
+import { stateStatus } from '../../store/constants';
+import { PiSpinnerBold } from 'react-icons/pi';
 
 const style = {
-	wrapper: `h-[30vh] overflow-scroll`,
+	spinnerWrapper: `h-[30vh] flex justify-center items-center`,
+	timelineWrapper: `h-[30vh] overflow-scroll`,
 };
 
 export const Education = () => {
-	return (
-		<div className={style.wrapper}>
-			{educationList.map((education) => {
-				return (
-					<EducationTimeline key={education.title} education={education} />
-				);
-			})}
-		</div>
-	);
+	const dispatch = useAppDispatch();
+	useEffect(() => {
+		dispatch(fetchEducations());
+	}, [dispatch]);
+
+	const educationList = useSelector(getEducationsList);
+	const educationsStateStatus = useSelector(getEducationsStateStatus);
+
+	if (educationsStateStatus === stateStatus.loading) {
+		return (
+			<div className={style.spinnerWrapper}>
+				<PiSpinnerBold color='#009E60' size={30} className='rotation' />
+			</div>
+		);
+	}
+
+	if (educationsStateStatus === stateStatus.succeeded) {
+		return (
+			<div className={style.timelineWrapper}>
+				{educationList.map((education) => {
+					return (
+						<EducationTimeline key={education.title} education={education} />
+					);
+				})}
+			</div>
+		);
+	}
 };
