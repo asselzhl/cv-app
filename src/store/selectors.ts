@@ -6,5 +6,3 @@ export const getEducationsStateStatus = (state: RootState) =>
 
 export const getSkillsStateStatus = (state: RootState) => state.skills.status;
 export const getSkillsList = (state: RootState) => state.skills.data;
-
-
