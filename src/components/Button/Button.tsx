@@ -77,7 +77,11 @@ const buttonMap: Record<ButtonMapKeys, ButtonMapValues> = {
 export const Button = ({ buttonConfig, onClick }: ButtonProps) => {
 	const config: ButtonMapValues = buttonMap[buttonConfig];
 	return (
-		<button className={config.style.button} onClick={onClick}>
+		<button
+			className={config.style.button}
+			onClick={onClick}
+			data-testid='button'
+		>
 			{config.icon}
 			<span className={config.style.span}>{config.text}</span>
 		</button>

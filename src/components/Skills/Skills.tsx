@@ -4,7 +4,7 @@ import { stateStatus } from '../../store/constants';
 import { getSkillsList, getSkillsStateStatus } from '../../store/selectors';
 import { fetchSkills } from '../../store/skills/skillsThunk';
 import { useAppDispatch } from '../../store/store';
-import { Button } from '../Button';
+import { Button } from '../Button/Button';
 import { SkillForm } from './SkillForm';
 import { SkillsItem } from './SkillsItem';
 import { Scale } from './Scale';

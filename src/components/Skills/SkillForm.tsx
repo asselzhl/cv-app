@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
 import { FormField } from './FormField';
-import { Button } from '../Button';
+import { Button } from '../Button/Button';
 import { useAppDispatch } from '../../store/store';
 import { addSkill } from '../../store/skills/skillsThunk';
 

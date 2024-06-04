@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from './Box';
-import { Button } from './Button';
+import { Button } from './Button/Button';
 
 import { HashLink } from 'react-router-hash-link';
 import { boxList } from '../helpers/lists/boxList';

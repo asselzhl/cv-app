@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Navigation } from './Navigation';
 import { PhotoBox } from './PhotoBox';
-import { Button } from './Button';
+import { Button } from './Button/Button';
 import { Link } from 'react-router-dom';
 import { routePaths } from '../routePaths';
 
