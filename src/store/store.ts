@@ -14,12 +14,12 @@ import {
 	REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import { skillFormReducer } from './skillForm/skillFormSlice';
+
 
 const persistConfig = {
 	key: 'root',
 	storage,
-	blacklist: ['education', 'skills', 'skillForm'],
+	blacklist: ['education', 'skills'],
 };
 
 const skillsPersistConfig = {
@@ -31,7 +31,6 @@ const skillsPersistConfig = {
 const rootReducer = combineReducers({
 	education: educationReducer,
 	skills: persistReducer(skillsPersistConfig, skillsReducer),
-	skillForm: skillFormReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -46,6 +45,8 @@ export const store = configureStore({
 					'fetchEducations/rejected',
 					'fetchSkills/fulfilled',
 					'fetchSkills/rejected',
+					'addSkill/rejected',
+					'addSkill/fulfilled',
 					FLUSH,
 					REHYDRATE,
 					PAUSE,
