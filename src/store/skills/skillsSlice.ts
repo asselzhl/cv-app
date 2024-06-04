@@ -18,9 +18,8 @@ export const skillsSlice = createSlice({
 				state.status = stateStatus.loading;
 				return state;
 			})
-			.addCase(fetchSkills.fulfilled, (state, action) => {
+			.addCase(fetchSkills.fulfilled, (state) => {
 				state.status = stateStatus.succeeded;
-				state.data = action.payload.data.skills;
 				return state;
 			})
 			.addCase(fetchSkills.rejected, (state, action) => {
