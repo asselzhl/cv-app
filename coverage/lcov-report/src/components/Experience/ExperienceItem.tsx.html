@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -101,7 +101,7 @@
 <a name='L36'></a><a href='#L36'>36</a>
 <a name='L37'></a><a href='#L37'>37</a>
 <a name='L38'></a><a href='#L38'>38</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -122,8 +122,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -137,42 +137,42 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
-const style = <span class="cstat-no" title="statement not covered" >{</span>
-	wrapper: `flex flex-wrap gap-y-5`,
-	leftCol: `sm:w-[20%]`,
-	rightCol: `sm:w-[80%]`,
-	title: `font-bold mb-2`,
-	date: `text-[#667081]`,
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
+const style = {
+  wrapper: `flex flex-wrap gap-y-5`,
+  leftCol: `sm:w-[20%]`,
+  rightCol: `sm:w-[80%]`,
+  title: `font-bold mb-2`,
+  date: `text-[#667081]`,
 };
 &nbsp;
 interface ExperienceInfo {
-	company: string;
-	title: string;
-	description: string;
+  company: string;
+  title: string;
+  description: string;
 }
 interface ExperienceListItem {
-	date: string;
-	info: ExperienceInfo;
+  date: string;
+  info: ExperienceInfo;
 }
 interface ExperienceItemProps {
-	job: ExperienceListItem;
+  job: ExperienceListItem;
 }
 &nbsp;
-export const <span class="cstat-no" title="statement not covered" >ExperienceItem = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(</span>{</span> job }: ExperienceItemProps) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >	return (</span>
-		&lt;div className={style.wrapper}&gt;
-			&lt;div className={style.leftCol}&gt;
-				&lt;h4 className={style.title}&gt;{job.info.company}&lt;/h4&gt;
-				&lt;h5 className={style.date}&gt;{job.date}&lt;/h5&gt;
-			&lt;/div&gt;
+export const ExperienceItem = ({ job }: ExperienceItemProps) =&gt; {
+  return (
+    &lt;div className={style.wrapper} data-testid="experience-item"&gt;
+      &lt;div className={style.leftCol}&gt;
+        &lt;h4 className={style.title}&gt;{job.info.company}&lt;/h4&gt;
+        &lt;h5 className={style.date}&gt;{job.date}&lt;/h5&gt;
+      &lt;/div&gt;
 &nbsp;
-			&lt;div className={style.rightCol}&gt;
-				&lt;h4 className={style.title}&gt;{job.info.title}&lt;/h4&gt;
-				&lt;p&gt;{job.info.description}&lt;/p&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	);
+      &lt;div className={style.rightCol}&gt;
+        &lt;h4 className={style.title}&gt;{job.info.title}&lt;/h4&gt;
+        &lt;p&gt;{job.info.description}&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
 };
 &nbsp;</pre></td></tr></table></pre>
 
@@ -181,7 +181,7 @@ export const <span class="cstat-no" title="statement not covered" >ExperienceIte
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-04T13:09:58.389Z
+                at 2024-06-04T15:52:41.814Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

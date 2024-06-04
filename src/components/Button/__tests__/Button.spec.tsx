@@ -1,13 +1,27 @@
-import { render, screen } from '@testing-library/react';
-import { Button } from '../Button';
-import '@testing-library/jest-dom/extend-expect';
+import { fireEvent, render, screen } from "@testing-library/react";
+import { Button } from "../Button";
+import "@testing-library/jest-dom/extend-expect";
 
-describe('Button', () => {
-	it('should render', () => {
-		render(<Button buttonConfig='knowMore' />);
+const buttonConfig = "knowMore";
+const handleClick = jest.fn();
 
-		const element = screen.getByTestId('button');
+describe("Button Component", () => {
+  it("renders button with correct text", () => {
+    render(<Button buttonConfig={buttonConfig} />);
 
-		expect(element).toBeInTheDocument();
-	});
+    const buttonElement = screen.getByTestId("button");
+    const spanElement = screen.getByText("know more");
+
+    expect(buttonElement).toBeInTheDocument();
+    expect(spanElement).toBeInTheDocument();
+  });
+
+  it("calls onClick when button is clicked", () => {
+    render(<Button buttonConfig={buttonConfig} onClick={handleClick} />);
+
+    const buttonElement = screen.getByTestId("button");
+    fireEvent.click(buttonElement);
+
+    expect(handleClick).toHaveBeenCalledTimes(1);
+  });
 });

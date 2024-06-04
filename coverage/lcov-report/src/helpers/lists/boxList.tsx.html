@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>0/12</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>0/12</span>
             </div>
         
             
@@ -123,13 +123,22 @@
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
 <a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -145,6 +154,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -183,65 +195,71 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import { Skills } from '../../components/Skills/Skills';</span>
-<span class="cstat-no" title="statement not covered" >import { About } from '../../components/About/About';</span>
-<span class="cstat-no" title="statement not covered" >import { Contacts } from '../../components/Contacts/Contacts';</span>
-<span class="cstat-no" title="statement not covered" >import { Education } from '../../components/Education/Education';</span>
-<span class="cstat-no" title="statement not covered" >import { Experience } from '../../components/Experience/Experience';</span>
-<span class="cstat-no" title="statement not covered" >import { Feedback } from '../../components/Feedback/Feedback';</span>
-<span class="cstat-no" title="statement not covered" >import { Portfolio } from '../../components/Portfolio/Portfolio';</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import { Skills } from "../../components/Skills/Skills";</span>
+<span class="cstat-no" title="statement not covered" >import { About } from "../../components/About/About";</span>
+<span class="cstat-no" title="statement not covered" >import { Contacts } from "../../components/Contacts/Contacts";</span>
+<span class="cstat-no" title="statement not covered" >import { Education } from "../../components/Education/Education";</span>
+<span class="cstat-no" title="statement not covered" >import { Experience } from "../../components/Experience/Experience";</span>
+<span class="cstat-no" title="statement not covered" >import { Feedback } from "../../components/Feedback/Feedback";</span>
+<span class="cstat-no" title="statement not covered" >import { Portfolio } from "../../components/Portfolio/Portfolio";</span>
+<span class="cstat-no" title="statement not covered" >import { contactsList } from "./contactsList";</span>
+<span class="cstat-no" title="statement not covered" >import { experienceList } from "./experienceList";</span>
+<span class="cstat-no" title="statement not covered" >import { feedbacksList } from "./feedbacksList";</span>
 &nbsp;
 type BoxMapKeys =
-	| 'about'
-	| 'education'
-	| 'experience'
-	| 'skills'
-	| 'portfolio'
-	| 'contacts'
-	| 'feedbacks';
+  | "about"
+  | "education"
+  | "experience"
+  | "skills"
+  | "portfolio"
+  | "contacts"
+  | "feedbacks";
 &nbsp;
 interface BoxMapValues {
-	title: string;
-	content: JSX.Element;
-	id: BoxMapKeys;
+  title: string;
+  content: JSX.Element;
+  id: BoxMapKeys;
 }
 &nbsp;
+const aboutText =
+<span class="cstat-no" title="statement not covered" >  "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque";</span>
+&nbsp;
 export const <span class="cstat-no" title="statement not covered" >boxList: BoxMapValues[] = [</span>
-	{
-		title: 'About me',
-		content: &lt;About /&gt;,
-		id: 'about',
-	},
-	{
-		title: 'Education',
-		content: &lt;Education /&gt;,
-		id: 'education',
-	},
-	{
-		title: 'Experience',
-		content: &lt;Experience /&gt;,
-		id: 'experience',
-	},
-	{
-		title: 'Skills',
-		content: &lt;Skills /&gt;,
-		id: 'skills',
-	},
-	{
-		title: 'Portfolio',
-		content: &lt;Portfolio /&gt;,
-		id: 'portfolio',
-	},
-	{
-		title: 'Contacts',
-		content: &lt;Contacts /&gt;,
-		id: 'contacts',
-	},
-	{
-		title: 'Feedbacks',
-		content: &lt;Feedback /&gt;,
-		id: 'feedbacks',
-	},
+  {
+    title: "About me",
+    content: &lt;About text={aboutText} /&gt;,
+    id: "about",
+  },
+  {
+    title: "Education",
+    content: &lt;Education /&gt;,
+    id: "education",
+  },
+  {
+    title: "Experience",
+    content: &lt;Experience experienceList={experienceList} /&gt;,
+    id: "experience",
+  },
+  {
+    title: "Skills",
+    content: &lt;Skills /&gt;,
+    id: "skills",
+  },
+  {
+    title: "Portfolio",
+    content: &lt;Portfolio /&gt;,
+    id: "portfolio",
+  },
+  {
+    title: "Contacts",
+    content: &lt;Contacts contactsList={contactsList} /&gt;,
+    id: "contacts",
+  },
+  {
+    title: "Feedbacks",
+    content: &lt;Feedback feedbacksList={feedbacksList} /&gt;,
+    id: "feedbacks",
+  },
 ];
 &nbsp;</pre></td></tr></table></pre>
 
@@ -250,7 +268,7 @@ export const <span class="cstat-no" title="statement not covered" >boxList: BoxM
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-04T13:09:58.389Z
+                at 2024-06-04T15:52:41.814Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
