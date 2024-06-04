@@ -1,5 +1,20 @@
 import { createServer } from 'miragejs';
 
+const skills = [
+	{
+		name: 'JavaScript',
+		range: 50,
+	},
+	{
+		name: 'React',
+		range: 80,
+	},
+	{
+		name: 'Angular',
+		range: 20,
+	},
+];
+
 export const server = () =>
 	createServer({
 		routes() {
@@ -38,23 +53,16 @@ export const server = () =>
 				'/skills',
 				() => {
 					return {
-						skills: [
-							{
-								name: 'JavaScript',
-								range: 50,
-							},
-							{
-								name: 'React',
-								range: 80,
-							},
-							{
-								name: 'Angular',
-								range: 80,
-							},
-						],
+						skills,
 					};
 				},
 				{ timing: 3000 }
 			);
+
+			this.post('skills', (schema, request) => {
+				const attrs = JSON.parse(request.requestBody);
+				skills.push(attrs);
+				return { skill: attrs };
+			});
 		},
 	});

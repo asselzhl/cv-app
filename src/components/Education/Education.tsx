@@ -17,12 +17,15 @@ const style = {
 
 export const Education = () => {
 	const dispatch = useAppDispatch();
-	useEffect(() => {
-		dispatch(fetchEducations());
-	}, [dispatch]);
 
 	const educationList = useSelector(getEducationsList);
 	const educationsStateStatus = useSelector(getEducationsStateStatus);
+
+	useEffect(() => {
+		if (educationsStateStatus === stateStatus.idle) {
+			dispatch(fetchEducations());
+		}
+	}, [dispatch]);
 
 	if (educationsStateStatus === stateStatus.loading) {
 		return (
@@ -43,4 +46,6 @@ export const Education = () => {
 			</div>
 		);
 	}
+
+	// TODO: if status === failed
 };

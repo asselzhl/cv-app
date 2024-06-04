@@ -1,7 +1,13 @@
 import React from 'react';
 import { FaAngleLeft, FaBars, FaAngleUp } from 'react-icons/fa6';
 
-type ButtonMapKeys = 'knowMore' | 'goBack' | 'togglePanel' | 'goToTop';
+type ButtonMapKeys =
+	| 'knowMore'
+	| 'goBack'
+	| 'togglePanel'
+	| 'goToTop'
+	| 'addSkill'
+	| 'openEdit';
 interface ButtonMapValues {
 	text: string;
 	style;
@@ -43,6 +49,20 @@ const buttonMap: Record<ButtonMapKeys, ButtonMapValues> = {
 			button: 'fixed right-10 bottom-0 bg-[#222935] p-3 rounded-t-lg z-10',
 		},
 		icon: <FaAngleUp color='white' />,
+	},
+	addSkill: {
+		text: 'Add skill',
+		style: {
+			button:
+				'bg-[#009E60] text-white rounded py-[10px] px-[20px] hover:bg-[#002147] duration-300',
+		},
+	},
+	openEdit: {
+		text: 'Open edit',
+		style: {
+			button:
+				'bg-[#002147] text-white rounded py-[10px] px-[20px] hover:bg-[#009E60] duration-300 mb-5',
+		},
 	},
 };
 

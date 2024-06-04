@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { stateStatus } from '../constants';
-import { fetchSkills } from './skillsThunk';
+import { addSkill, fetchSkills } from './skillsThunk';
 
 const initialState = {
 	status: stateStatus.idle,
@@ -26,6 +26,11 @@ export const skillsSlice = createSlice({
 			.addCase(fetchSkills.rejected, (state, action) => {
 				state.status = stateStatus.failed;
 				state.error = action.error.message;
+				return state;
+			})
+			.addCase(addSkill.fulfilled, (state, action) => {
+				state.status = stateStatus.succeeded;
+				state.data.push(action.payload.data.skill);
 				return state;
 			});
 	},
