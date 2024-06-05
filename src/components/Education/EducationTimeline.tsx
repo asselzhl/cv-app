@@ -8,6 +8,10 @@ import {
 	TimelineBody,
 } from '@material-tailwind/react';
 
+const style = {
+	timeline: `text-[#009E60] bg-transparent font-bold leading-none`,
+};
+
 interface EducationItem {
 	date: number;
 	title: string;
@@ -23,7 +27,7 @@ export const EducationTimeline = ({ education }: EducationItemProps) => {
 			<TimelineItem>
 				<TimelineConnector />
 				<TimelineHeader className='h-3'>
-					<TimelineIcon className='text-[#009E60] bg-transparent font-bold leading-none'>
+					<TimelineIcon className={style.timeline}>
 						{education.date}
 					</TimelineIcon>
 					{education.title}

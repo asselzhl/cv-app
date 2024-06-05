@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { EducationTimeline } from './EducationTimeline';
 import { useAppDispatch } from '../../store/store';
 import { fetchEducations } from '../../store/education/educationThunk';
 import { useSelector } from 'react-redux';
@@ -8,12 +7,12 @@ import {
 	getEducationsStateStatus,
 } from '../../store/selectors';
 import { stateStatus } from '../../store/constants';
-import { PiSpinnerBold } from 'react-icons/pi';
+import { Loading } from '../Loading/Loading';
+import { EducationSucceeded } from './EducationSucceeded';
+import { Failed } from '../Failed/Failed';
 
-const style = {
-	spinnerWrapper: `h-[30vh] flex justify-center items-center`,
-	timelineWrapper: `h-[30vh] overflow-scroll`,
-};
+const responseFailedMessage =
+	'Something went wrong; please review your server connection!';
 
 export const Education = () => {
 	const dispatch = useAppDispatch();
@@ -28,32 +27,14 @@ export const Education = () => {
 	}, [dispatch]);
 
 	if (educationsStateStatus === stateStatus.loading) {
-		return (
-			<div className={style.spinnerWrapper}>
-				<PiSpinnerBold color='#009E60' size={30} className='rotation' />
-			</div>
-		);
+		return <Loading />;
 	}
 
 	if (educationsStateStatus === stateStatus.succeeded) {
-		return (
-			<div className={style.timelineWrapper}>
-				{educationList.map((education) => {
-					return (
-						<EducationTimeline key={education.title} education={education} />
-					);
-				})}
-			</div>
-		);
+		return <EducationSucceeded educationList={educationList} />;
 	}
 
 	if (educationsStateStatus === stateStatus.failed) {
-		return (
-			<div className={style.spinnerWrapper}>
-				<p className='text-red-500'>
-					Something went wrong; please review your server connection!
-				</p>
-			</div>
-		);
+		return <Failed text={responseFailedMessage} />;
 	}
 };

@@ -4,16 +4,13 @@ import { stateStatus } from '../../store/constants';
 import { getSkillsList, getSkillsStateStatus } from '../../store/selectors';
 import { fetchSkills } from '../../store/skills/skillsThunk';
 import { useAppDispatch } from '../../store/store';
-import { Button } from '../Button/Button';
-import { SkillForm } from './SkillForm';
-import { SkillsItem } from './SkillsItem';
-import { Scale } from './Scale';
 
-import { PiSpinnerBold } from 'react-icons/pi';
+import { Loading } from '../Loading/Loading';
+import { Failed } from '../Failed/Failed';
+import { SkillsSucceeded } from './SkillsSucceeded';
 
-const style = {
-	spinnerWrapper: `h-[30vh] flex justify-center items-center`,
-};
+const responseFailedMessage =
+	'Something went wrong; please review your server connection!';
 
 export const Skills = () => {
 	const dispatch = useAppDispatch();
@@ -22,6 +19,7 @@ export const Skills = () => {
 	const [isFormHidden, setIsFormHidden] = useState<boolean>(true);
 
 	const skillsStateStatus = useSelector(getSkillsStateStatus);
+
 	useEffect(() => {
 		if (skillsStateStatus === stateStatus.idle) {
 			dispatch(fetchSkills());
@@ -33,38 +31,20 @@ export const Skills = () => {
 	};
 
 	if (skillsStateStatus === stateStatus.loading) {
-		return (
-			<div className={style.spinnerWrapper}>
-				<PiSpinnerBold color='#009E60' size={30} className='rotation' />
-			</div>
-		);
+		return <Loading />;
 	}
 
 	if (skillsStateStatus === stateStatus.succeeded) {
 		return (
-			<div>
-				<Button
-					buttonConfig={isFormHidden ? 'openEdit' : 'closeEdit'}
-					onClick={toggleForm}
-				/>
-				{!isFormHidden && <SkillForm />}
-				<ul className='flex flex-col gap-y-1 mb-7'>
-					{skillsList.map((skill) => {
-						return <SkillsItem key={skill.name} skill={skill} />;
-					})}
-				</ul>
-				<Scale />
-			</div>
+			<SkillsSucceeded
+				skillsList={skillsList}
+				isFormHidden={isFormHidden}
+				toggleForm={toggleForm}
+			/>
 		);
 	}
 
 	if (skillsStateStatus === stateStatus.failed) {
-		return (
-			<div className={style.spinnerWrapper}>
-				<p className='text-red-500'>
-					Something went wrong; please review your server connection!
-				</p>
-			</div>
-		);
+		return <Failed text={responseFailedMessage} />;
 	}
 };

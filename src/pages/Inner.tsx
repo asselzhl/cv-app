@@ -1,12 +1,17 @@
 import React from 'react';
-import { Main } from '../components/Main';
-import { Panel } from '../components/Panel';
+import { Main } from '../components/Main/Main';
+import { Panel } from '../components/Panel/Panel';
+import { boxList } from '../helpers/lists/boxList';
+
+const style = {
+	wrapper: `flex`,
+};
 
 export const Inner = () => {
 	return (
-		<div className='flex'>
+		<div className={style.wrapper}>
 			<Panel />
-			<Main />
+			<Main boxList={boxList} />
 		</div>
 	);
 };

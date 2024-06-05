@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1717516361842" clover="3.2.0">
-  <project timestamp="1717516361842" name="All files">
-    <metrics statements="318" coveredstatements="31" conditionals="35" coveredconditionals="0" methods="74" coveredmethods="11" elements="427" coveredelements="42" complexity="0" loc="318" ncloc="318" packages="16" files="42" classes="42"/>
+<coverage generated="1717569879151" clover="3.2.0">
+  <project timestamp="1717569879151" name="All files">
+    <metrics statements="318" coveredstatements="31" conditionals="35" coveredconditionals="0" methods="75" coveredmethods="11" elements="428" coveredelements="42" complexity="0" loc="318" ncloc="318" packages="21" files="42" classes="42"/>
     <package name="src">
-      <metrics statements="20" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <metrics statements="19" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
       <file name="App.tsx" path="/Users/asselzhl/Desktop/EPAM/Capstone/capstone-project/src/App.tsx">
         <metrics statements="8" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
@@ -29,63 +29,6 @@
         <line num="10" count="0" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
       </file>
-      <file name="routePaths.tsx" path="/Users/asselzhl/Desktop/EPAM/Capstone/capstone-project/src/routePaths.tsx">
-        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="8" count="0" type="stmt"/>
-      </file>
-    </package>
-    <package name="src.components">
-      <metrics statements="35" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="8" coveredmethods="0"/>
-      <file name="Box.tsx" path="/Users/asselzhl/Desktop/EPAM/Capstone/capstone-project/src/components/Box.tsx">
-        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-      </file>
-      <file name="Main.tsx" path="/Users/asselzhl/Desktop/EPAM/Capstone/capstone-project/src/components/Main.tsx">
-        <metrics statements="8" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-      </file>
-      <file name="Navigation.tsx" path="/Users/asselzhl/Desktop/EPAM/Capstone/capstone-project/src/components/Navigation.tsx">
-        <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="71" count="0" type="stmt"/>
-        <line num="72" count="0" type="stmt"/>
-        <line num="76" count="0" type="stmt"/>
-      </file>
-      <file name="Panel.tsx" path="/Users/asselzhl/Desktop/EPAM/Capstone/capstone-project/src/components/Panel.tsx">
-        <metrics statements="12" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-      </file>
-      <file name="PhotoBox.tsx" path="/Users/asselzhl/Desktop/EPAM/Capstone/capstone-project/src/components/PhotoBox.tsx">
-        <metrics statements="5" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="49" count="0" type="stmt"/>
-        <line num="50" count="0" type="stmt"/>
-        <line num="51" count="0" type="stmt"/>
-      </file>
     </package>
     <package name="src.components.About">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -93,6 +36,15 @@
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.Box">
+      <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="Box.tsx" path="/Users/asselzhl/Desktop/EPAM/Capstone/capstone-project/src/components/Box/Box.tsx">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.components.Button">
@@ -145,11 +97,11 @@
         <line num="26" count="0" type="stmt"/>
         <line num="30" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="31" count="0" type="stmt"/>
-        <line num="38" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="39" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="50" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="51" count="0" type="stmt"/>
+        <line num="43" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="55" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="56" count="0" type="stmt"/>
       </file>
       <file name="EducationTimeline.tsx" path="/Users/asselzhl/Desktop/EPAM/Capstone/capstone-project/src/components/Education/EducationTimeline.tsx">
         <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
@@ -192,14 +144,68 @@
         <line num="20" count="2" type="stmt"/>
       </file>
     </package>
+    <package name="src.components.Main">
+      <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="Main.tsx" path="/Users/asselzhl/Desktop/EPAM/Capstone/capstone-project/src/components/Main/Main.tsx">
+        <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.Navigation">
+      <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="Navigation.tsx" path="/Users/asselzhl/Desktop/EPAM/Capstone/capstone-project/src/components/Navigation/Navigation.tsx">
+        <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.Panel">
+      <metrics statements="12" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="Panel.tsx" path="/Users/asselzhl/Desktop/EPAM/Capstone/capstone-project/src/components/Panel/Panel.tsx">
+        <metrics statements="12" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.PhotoBox">
+      <metrics statements="5" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="PhotoBox.tsx" path="/Users/asselzhl/Desktop/EPAM/Capstone/capstone-project/src/components/PhotoBox/PhotoBox.tsx">
+        <metrics statements="5" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+      </file>
+    </package>
     <package name="src.components.Portfolio">
-      <metrics statements="30" coveredstatements="0" conditionals="16" coveredconditionals="0" methods="12" coveredmethods="0"/>
+      <metrics statements="29" coveredstatements="0" conditionals="16" coveredconditionals="0" methods="12" coveredmethods="0"/>
       <file name="Portfolio.tsx" path="/Users/asselzhl/Desktop/EPAM/Capstone/capstone-project/src/components/Portfolio/Portfolio.tsx">
-        <metrics statements="18" coveredstatements="0" conditionals="14" coveredconditionals="0" methods="8" coveredmethods="0"/>
+        <metrics statements="17" coveredstatements="0" conditionals="14" coveredconditionals="0" methods="8" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="2" count="0" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
@@ -304,10 +310,17 @@
         <line num="4" count="0" type="stmt"/>
       </file>
     </package>
+    <package name="src.helpers">
+      <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="routePaths.tsx" path="/Users/asselzhl/Desktop/EPAM/Capstone/capstone-project/src/helpers/routePaths.tsx">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+    </package>
     <package name="src.helpers.lists">
-      <metrics statements="23" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="24" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="boxList.tsx" path="/Users/asselzhl/Desktop/EPAM/Capstone/capstone-project/src/helpers/lists/boxList.tsx">
-        <metrics statements="12" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="13" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
@@ -318,8 +331,9 @@
         <line num="8" count="0" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
       </file>
       <file name="contactsList.tsx" path="/Users/asselzhl/Desktop/EPAM/Capstone/capstone-project/src/helpers/lists/contactsList.tsx">
         <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -346,7 +360,7 @@
       </file>
     </package>
     <package name="src.pages">
-      <metrics statements="11" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <metrics statements="12" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
       <file name="Home.tsx" path="/Users/asselzhl/Desktop/EPAM/Capstone/capstone-project/src/pages/Home.tsx">
         <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="2" count="0" type="stmt"/>
@@ -358,11 +372,12 @@
         <line num="12" count="0" type="stmt"/>
       </file>
       <file name="Inner.tsx" path="/Users/asselzhl/Desktop/EPAM/Capstone/capstone-project/src/pages/Inner.tsx">
-        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.services">
@@ -391,7 +406,7 @@
       </file>
     </package>
     <package name="src.store">
-      <metrics statements="20" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
+      <metrics statements="20" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
       <file name="constants.ts" path="/Users/asselzhl/Desktop/EPAM/Capstone/capstone-project/src/store/constants.ts">
         <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="3" count="0" type="stmt"/>
@@ -405,7 +420,7 @@
         <line num="8" count="0" type="stmt"/>
       </file>
       <file name="store.ts" path="/Users/asselzhl/Desktop/EPAM/Capstone/capstone-project/src/store/store.ts">
-        <metrics statements="14" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <metrics statements="14" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>

@@ -1,17 +1,35 @@
 import React from 'react';
 
 const style = {
+	wrapper: `mb-6`,
 	pageInput: `p-2.5 leading-6 rounded border border-[#667081] focus:outline-[#007298]`,
 	label: `mr-5`,
 	error: `text-red-500`,
 };
 
-export const FormField = ({ field, formik }) => {
+interface FormFieldsItem {
+	labelText: string;
+	type: string;
+	placeholderText: string;
+	name: string;
+	inputID: string;
+}
+
+interface FormFieldWithErrorProps {
+	field: FormFieldsItem;
+	formik; // TODO: type?
+}
+
+export const FormFieldWithError = ({
+	field,
+	formik,
+}: FormFieldWithErrorProps) => {
 	return (
-		<div className='mb-6'>
+		<div className={style.wrapper}>
 			<label htmlFor={field.inputID} className={style.label}>
 				{field.labelText}
 			</label>
+
 			<input
 				type={field.type}
 				id={field.inputID}
@@ -22,6 +40,7 @@ export const FormField = ({ field, formik }) => {
 				onChange={formik.handleChange}
 				onBlur={formik.handleBlur}
 			/>
+
 			<div className={style.error}>
 				{formik.errors[field.inputID] &&
 					formik.touched[field.inputID] &&

@@ -1,8 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchEducations } from './educationThunk';
-import { stateStatus } from '../constants';
+import { StateStatus, stateStatus } from '../constants';
 
-const initialState = {
+interface EducationsListItem {
+	date: number;
+	title: string;
+	description: string;
+}
+interface EducationsState {
+	status: StateStatus;
+	data: EducationsListItem[];
+	error: null | string;
+}
+
+const initialState: EducationsState = {
 	status: stateStatus.idle,
 	data: [],
 	error: null,

@@ -1,6 +1,16 @@
 import { createServer } from 'miragejs';
 
-const skills = [
+interface SkillListItem {
+	name: string;
+	range: number;
+}
+interface EducationsListItem {
+	date: number;
+	title: string;
+	description: string;
+}
+
+const skills: SkillListItem[] = [
 	{
 		name: 'JavaScript',
 		range: 50,
@@ -15,7 +25,7 @@ const skills = [
 	},
 ];
 
-const educations = [
+const educations: EducationsListItem[] = [
 	{
 		date: 2001,
 		title: 'Title 0',

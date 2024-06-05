@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Navigation } from './Navigation';
-import { PhotoBox } from './PhotoBox';
-import { Button } from './Button/Button';
+import { Navigation } from '../Navigation/Navigation';
+import { PhotoBox } from '../PhotoBox/PhotoBox';
+import { Button } from '../Button/Button';
 import { Link } from 'react-router-dom';
-import { routePaths } from '../routePaths';
+import { routePaths } from '../../helpers/routePaths';
+import { navList } from '../../helpers/lists/navList';
+import { buttonKeys } from '../../helpers/buttonMap';
 
 const style = {
 	asideClosed: `bg-[#222935] p-7 flex flex-col gap-y-14 absolute right-[100%]`,
@@ -18,11 +20,11 @@ export const Panel = () => {
 	};
 	return (
 		<aside className={isPanelOpen ? style.asideClosed : style.asideOpen}>
-			<Button buttonConfig='togglePanel' onClick={togglePanel} />
+			<Button buttonConfig={buttonKeys.togglePanel} onClick={togglePanel} />
 			<PhotoBox config='inner' />
-			<Navigation />
+			<Navigation navList={navList} />
 			<Link to={routePaths.home}>
-				<Button buttonConfig='goBack' />
+				<Button buttonConfig={buttonKeys.goBack} />
 			</Link>
 		</aside>
 	);
