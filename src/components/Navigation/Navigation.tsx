@@ -28,7 +28,7 @@ interface NavigationProps {
 export const Navigation = ({ navList }: NavigationProps) => {
 	return (
 		<nav>
-			<ul className={style.list}>
+			<ul className={style.list} data-testid='nav-list'>
 				{navList.map((listItem) => {
 					return (
 						<li key={listItem.text}>
@@ -37,7 +37,7 @@ export const Navigation = ({ navList }: NavigationProps) => {
 								smooth
 								to={`#${listItem.id}`}
 							>
-								{listItem.icon}
+								<span data-testid='nav-icon'>{listItem.icon}</span>
 								<span className={style.span}>{listItem.text}</span>
 							</HashLink>
 						</li>

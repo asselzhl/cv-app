@@ -29,7 +29,7 @@ interface MainProps {
 
 export const Main = ({ boxList }: MainProps) => {
 	return (
-		<div className={style.wrapepr}>
+		<div className={style.wrapepr} data-testid='main'>
 			{boxList.map((box) => {
 				return <Box key={box.id} box={box} />;
 			})}

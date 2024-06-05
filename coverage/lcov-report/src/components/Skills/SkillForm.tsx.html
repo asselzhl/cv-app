@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/16</span>
+                <span class='fraction'>0/17</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/15</span>
+                <span class='fraction'>0/16</span>
             </div>
         
             
@@ -116,16 +116,7 @@
 <a name='L51'></a><a href='#L51'>51</a>
 <a name='L52'></a><a href='#L52'>52</a>
 <a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L54'></a><a href='#L54'>54</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -133,25 +124,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -181,6 +157,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -191,31 +173,16 @@
 <span class="cstat-no" title="statement not covered" >import { useFormik } from 'formik';</span>
 <span class="cstat-no" title="statement not covered" >import * as Yup from 'yup';</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >import { FormField } from './FormField';</span>
+<span class="cstat-no" title="statement not covered" >import { FormFieldWithError } from './FormFieldWithError';</span>
 <span class="cstat-no" title="statement not covered" >import { Button } from '../Button/Button';</span>
 <span class="cstat-no" title="statement not covered" >import { useAppDispatch } from '../../store/store';</span>
 <span class="cstat-no" title="statement not covered" >import { addSkill } from '../../store/skills/skillsThunk';</span>
+<span class="cstat-no" title="statement not covered" >import { buttonKeys } from '../../helpers/buttonMap';</span>
+<span class="cstat-no" title="statement not covered" >import { formFields } from '../../helpers/lists/formFieldsList';</span>
 &nbsp;
 const style = <span class="cstat-no" title="statement not covered" >{</span>
 	form: `border border-[#26C17E] p-5 rounded mb-10`,
 };
-&nbsp;
-const formFields = <span class="cstat-no" title="statement not covered" >[</span>
-	{
-		labelText: 'Skill name:',
-		type: 'text',
-		placeholderText: 'Enter skill name',
-		name: 'name',
-		inputID: 'name',
-	},
-	{
-		labelText: 'Skill range:',
-		type: 'text',
-		placeholderText: 'Enter skill range',
-		name: 'range',
-		inputID: 'range',
-	},
-];
 &nbsp;
 export const <span class="cstat-no" title="statement not covered" >SkillForm = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(</span>) =</span>&gt; {</span>
 	const dispatch = <span class="cstat-no" title="statement not covered" >useAppDispatch();</span>
@@ -242,11 +209,17 @@ export const <span class="cstat-no" title="statement not covered" >SkillForm = <
 <span class="cstat-no" title="statement not covered" >	return (</span>
 		&lt;form className={style.form} onSubmit={formik.handleSubmit}&gt;
 			{formFields.map(<span class="fstat-no" title="function not covered" >(f</span>ield) =&gt; {
-<span class="cstat-no" title="statement not covered" >				return &lt;FormField key={field.inputID} field={field} formik={formik} /&gt;;</span>
+<span class="cstat-no" title="statement not covered" >				return (</span>
+					&lt;FormFieldWithError
+						key={field.inputID}
+						field={field}
+						formik={formik}
+					/&gt;
+				);
 			})}
-			&lt;Button buttonConfig='addSkill' /&gt;
+			&lt;Button buttonConfig={buttonKeys.addSkill} /&gt;
 		&lt;/form&gt;
-		// disable button
+		// TODO: disable button
 	);
 };
 &nbsp;</pre></td></tr></table></pre>
@@ -256,7 +229,7 @@ export const <span class="cstat-no" title="statement not covered" >SkillForm = <
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-05T06:44:39.113Z
+                at 2024-06-05T12:44:43.081Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
