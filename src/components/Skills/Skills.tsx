@@ -7,7 +7,6 @@ import { useAppDispatch } from '../../store/store';
 
 import { Loading } from '../Loading/Loading';
 import { Failed } from '../Failed/Failed';
-import { buttonKeys } from '../../helpers/buttonMap';
 import { SkillForm } from './SkillForm';
 import { SkillsItem } from './SkillsItem';
 import { Scale } from './Scale';
@@ -15,6 +14,7 @@ import { Button } from '../Button/Button';
 
 const style = {
 	list: `flex flex-col gap-y-1 mb-7`,
+	formWrapper: ``,
 };
 
 const responseFailedMessage =
@@ -28,9 +28,7 @@ export const Skills = () => {
 
 	const skillsStateStatus = useSelector(getSkillsStateStatus);
 
-	const buttonConfig = isFormHidden
-		? buttonKeys.openEdit
-		: buttonKeys.closeEdit;
+	const buttonText = isFormHidden ? 'Open edit' : 'Close edit';
 
 	useEffect(() => {
 		if (skillsStateStatus === stateStatus.idle) {
@@ -52,7 +50,7 @@ export const Skills = () => {
 
 	return (
 		<div>
-			<Button buttonConfig={buttonConfig} onClick={toggleForm} />
+			<Button text={buttonText} onClick={toggleForm} />
 			{!isFormHidden && <SkillForm />}
 
 			<ul className={style.list}>

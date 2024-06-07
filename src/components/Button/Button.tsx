@@ -1,26 +1,33 @@
-import React from 'react';
-import { buttonMap } from '../../helpers/buttonMap';
+import React from "react";
+import { buttonStyle } from "../../helpers/buttonStyleMap";
 
-interface ButtonMapValues {
-	text: string;
-	style;
-	icon?: JSX.Element;
-}
+type ButtonTypes = "button" | "submit" | "reset";
+
 interface ButtonProps {
-	buttonConfig: string;
-	onClick?: () => void;
+  text: string;
+  icon?: JSX.Element;
+  type?: ButtonTypes;
+  styleKey?;
+  onClick?: () => void;
 }
 
-export const Button = ({ buttonConfig, onClick }: ButtonProps) => {
-	const config: ButtonMapValues = buttonMap[buttonConfig];
-	return (
-		<button
-			className={config.style.button}
-			onClick={onClick}
-			data-testid='button'
-		>
-			{config.icon}
-			<span className={config.style.span}>{config.text}</span>
-		</button>
-	);
+export const Button = ({
+  text,
+  icon,
+  type = "button",
+  styleKey = "default",
+  onClick,
+}: ButtonProps) => {
+  const styleConfig = buttonStyle[styleKey];
+  return (
+    <button
+      className={styleConfig.button}
+      type={type}
+      onClick={onClick}
+      data-testid="button"
+    >
+      {icon}
+      <span className={styleConfig.span}>{text}</span>
+    </button>
+  );
 };

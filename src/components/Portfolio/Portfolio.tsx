@@ -3,6 +3,7 @@ import Isotope from 'isotope-layout';
 
 import { PortfolioItem } from './PortfolioItem';
 import { FilterKeysItem, ProjectsItem } from '../../helpers/lists/projectsList';
+import { Button } from '../Button/Button';
 
 const style = {
 	filterKeysWrapper: `mb-5 flex gap-x-3`,
@@ -40,13 +41,12 @@ export const Portfolio = ({ projectsList, filterKeys }: PortfolioProps) => {
 			<div className={style.filterKeysWrapper}>
 				{filterKeys.map((filterKey) => {
 					return (
-						<button
+						<Button
 							key={filterKey.key}
-							className={style.filterKey}
+							text={filterKey.tag}
 							onClick={handleFilterKeyChange(filterKey.key)}
-						>
-							{filterKey.tag}
-						</button>
+							styleKey='rounded'
+						/>
 					);
 				})}
 			</div>

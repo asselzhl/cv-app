@@ -1,5 +1,4 @@
 import React from 'react';
-import { HashLink } from 'react-router-hash-link';
 
 const style = {
 	list: `flex flex-col gap-y-10`,
@@ -32,14 +31,10 @@ export const Navigation = ({ navList }: NavigationProps) => {
 				{navList.map((listItem) => {
 					return (
 						<li key={listItem.text}>
-							<HashLink
-								className={style.hashLink}
-								smooth
-								to={`#${listItem.id}`}
-							>
+							<a className={style.hashLink} href={`#${listItem.id}`}>
 								<span data-testid='nav-icon'>{listItem.icon}</span>
 								<span className={style.span}>{listItem.text}</span>
-							</HashLink>
+							</a>
 						</li>
 					);
 				})}

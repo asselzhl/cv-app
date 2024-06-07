@@ -6,11 +6,10 @@ import { FormFieldWithError } from './FormFieldWithError';
 import { Button } from '../Button/Button';
 import { useAppDispatch } from '../../store/store';
 import { addSkill } from '../../store/skills/skillsThunk';
-import { buttonKeys } from '../../helpers/buttonMap';
 import { formFields } from '../../helpers/lists/formFieldsList';
 
 const style = {
-	form: `border border-[#26C17E] p-5 rounded mb-10`,
+	form: `border border-[#26C17E] p-5 rounded mb-10 mt-10`,
 };
 
 export const SkillForm = () => {
@@ -46,7 +45,7 @@ export const SkillForm = () => {
 					/>
 				);
 			})}
-			<Button buttonConfig={buttonKeys.addSkill} />
+			<Button text='Add skill' type='submit' />
 		</form>
 		// TODO: disable button
 	);

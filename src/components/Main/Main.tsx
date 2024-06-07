@@ -1,9 +1,7 @@
 import React from 'react';
 import { Box } from '../Box/Box';
 import { Button } from '../Button/Button';
-
-import { HashLink } from 'react-router-hash-link';
-import { buttonKeys } from '../../helpers/buttonMap';
+import { FaAngleUp } from 'react-icons/fa6';
 
 const style = {
 	wrapepr: `p-10 flex flex-col gap-y-12 relative`,
@@ -28,14 +26,22 @@ interface MainProps {
 }
 
 export const Main = ({ boxList }: MainProps) => {
+	const handleScrollToTop = () => {
+		window.scrollTo({ top: 0 });
+	};
+
 	return (
 		<div className={style.wrapepr} data-testid='main'>
 			{boxList.map((box) => {
 				return <Box key={box.id} box={box} />;
 			})}
-			<HashLink smooth to='#top'>
-				<Button buttonConfig={buttonKeys.goToTop} />
-			</HashLink>
+
+			<Button
+				text=''
+				icon={<FaAngleUp color='white' />}
+				onClick={handleScrollToTop}
+				styleKey='positionFixed'
+			/>
 		</div>
 	);
 };
