@@ -4,8 +4,8 @@ import '@testing-library/jest-dom/extend-expect';
 import { Failed } from '../Failed';
 
 describe('Failed component', () => {
-	const text = 'Error message';
 	it('renders correctly with given text', () => {
+		const text = 'Error message';
 		render(<Failed text={text} />);
 
 		const textElement = screen.getByText(text);

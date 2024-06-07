@@ -1,5 +1,5 @@
 import React from 'react';
-import { buttonStyle } from '../../helpers/buttonStyleMap';
+import { buttonStyle } from '../../helpers/buttonStylesMap';
 
 type ButtonTypes = 'button' | 'submit' | 'reset';
 

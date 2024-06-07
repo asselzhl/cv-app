@@ -51,7 +51,7 @@ export const Portfolio = ({ projectsList, filterKeys }: PortfolioProps) => {
 				})}
 			</div>
 
-			<ul className={style.projectsList}>
+			<ul className={style.projectsList} data-testid='projects-list'>
 				{projectsList.map((project) => {
 					return <PortfolioItem key={project.info.title} project={project} />;
 				})}

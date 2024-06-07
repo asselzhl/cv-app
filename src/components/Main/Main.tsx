@@ -4,7 +4,7 @@ import { Button } from '../Button/Button';
 import { FaAngleUp } from 'react-icons/fa6';
 
 const style = {
-	wrapepr: `p-10 flex flex-col gap-y-12 relative`,
+	wrapper: `p-10 flex flex-col gap-y-12 relative`,
 };
 
 type BoxIDs =
@@ -31,7 +31,7 @@ export const Main = ({ boxList }: MainProps) => {
 	};
 
 	return (
-		<div className={style.wrapepr} data-testid='main'>
+		<main className={style.wrapper} data-testid='main'>
 			{boxList.map((box) => {
 				return <Box key={box.id} box={box} />;
 			})}
@@ -42,6 +42,6 @@ export const Main = ({ boxList }: MainProps) => {
 				onClick={handleScrollToTop}
 				styleKey='positionFixed'
 			/>
-		</div>
+		</main>
 	);
 };

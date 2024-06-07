@@ -2,22 +2,17 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { Contacts } from '../Contacts';
 
-import { FaPhone, FaEnvelope } from 'react-icons/fa6';
-
-const iconSize: number = 25;
-const iconColor: string = '#009E60';
-
 describe('Contacts component', () => {
 	const contactsList = [
 		{
 			href: 'tel:500342242',
-			icon: <FaPhone size={iconSize} color={iconColor} />,
+			icon: <span>icon</span>,
 			text: '500 342 242',
 			id: 'phone',
 		},
 		{
 			href: 'mailto:office@kamsolutions.pl',
-			icon: <FaEnvelope size={iconSize} color={iconColor} />,
+			icon: <span>icon</span>,
 			text: 'office@kamsolutions.pl',
 			id: 'email',
 		},

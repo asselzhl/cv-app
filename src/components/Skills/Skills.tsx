@@ -13,8 +13,7 @@ import { Scale } from './Scale';
 import { Button } from '../Button/Button';
 
 const style = {
-	list: `flex flex-col gap-y-1 mb-7`,
-	formWrapper: ``,
+	list: `flex flex-col gap-y-1 mb-7 mt-7`,
 };
 
 const responseFailedMessage =

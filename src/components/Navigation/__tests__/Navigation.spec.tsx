@@ -17,25 +17,32 @@ interface NavListItem {
 	id: NavItemID;
 }
 
-jest.mock('react-router-hash-link', () => ({
-	HashLink: jest.fn(({ children, ...props }) => <a {...props}>{children}</a>),
-}));
+const navList: NavListItem[] = [
+	{ id: 'about', text: 'Section 1', icon: <span>about</span> },
+	{ id: 'education', text: 'Section 2', icon: <span>education</span> },
+];
 
 describe('Navigation component', () => {
-	const navList: NavListItem[] = [
-		{ id: 'about', text: 'Section 1', icon: <svg data-testid='icon1' /> },
-		{ id: 'education', text: 'Section 2', icon: <svg data-testid='icon2' /> },
-	];
-
-	it('renders correctly with given navList', () => {
+	it('renders navigation list', () => {
 		render(<Navigation navList={navList} />);
 
-		navList.forEach((item, index) => {
-			const icon = screen.getByTestId(`icon${index + 1}`);
-			expect(icon).toBeInTheDocument();
+		const navListElement = screen.getByTestId('nav-list');
+		expect(navListElement).toBeInTheDocument();
+	});
 
-			const text = screen.getByText(item.text);
-			expect(text).toBeInTheDocument();
+	it('renders correct number of nav items', () => {
+		render(<Navigation navList={navList} />);
+
+		const navItems = screen.getAllByTestId('list-item');
+		expect(navItems.length).toBe(navList.length);
+	});
+
+	it('renders nav items with correct text', () => {
+		render(<Navigation navList={navList} />);
+
+		navList.forEach((item) => {
+			const textElement = screen.getByText(item.text);
+			expect(textElement).toBeInTheDocument();
 		});
 	});
 });

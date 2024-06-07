@@ -9,7 +9,7 @@ interface PhotoBoxProps {
 export const PhotoBox = ({ config }: PhotoBoxProps) => {
 	const { name, title, description, avatar, style } = photoBoxMap[config];
 	return (
-		<div className={style.container}>
+		<div className={style.container} data-testid='photobox'>
 			<div className={style.imgContainer}>
 				<img src={avatar} alt={`${name}'s avatar`} className={style.img} />
 			</div>

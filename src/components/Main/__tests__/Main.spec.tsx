@@ -1,10 +1,8 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
-import { HashLink } from 'react-router-hash-link';
 import { Main } from '../Main';
-import { Button } from '../../../components/Button/Button';
 
 type BoxIDs =
 	| 'about'
@@ -21,50 +19,45 @@ interface BoxListItem {
 	id: BoxIDs;
 }
 
-jest.mock('react-router-hash-link', () => ({
-	HashLink: jest.fn(({ children }) => <div>{children}</div>),
-}));
-
-jest.mock('.../../../components/Box/Box', () => ({
-	Box: jest.fn(({ box }) => <div data-testid='box'>{box.id}</div>),
-}));
-
-jest.mock('../../../components/Button/Button', () => ({
-	Button: jest.fn(({ buttonConfig }) => <button>{buttonConfig}</button>),
-}));
-
-jest.mock('../../../components/About/About', () => ({
-	About: jest.fn(),
-}));
-
-const buttonKeys = { goToTop: 'goToTop' };
+const boxList: BoxListItem[] = [
+	{
+		title: 'About me',
+		content: <p>Box content1</p>,
+		id: 'about',
+	},
+	{
+		title: 'Education',
+		content: <p>Box content2</p>,
+		id: 'education',
+	},
+];
 
 describe('Main component', () => {
-	const boxList: BoxListItem[] = [
-		{
-			title: 'About me',
-			content: <p>Box content</p>,
-			id: 'about',
-		},
-	];
-
-	it('renders correctly', () => {
+	it('renders main wrapper', () => {
 		render(<Main boxList={boxList} />);
 
-		expect(screen.getByTestId('main')).toBeInTheDocument();
+		const mainElement = screen.getByTestId('main');
+		expect(mainElement).toBeInTheDocument();
+	});
+
+	it('renders list of boxes', () => {
+		render(<Main boxList={boxList} />);
 
 		boxList.forEach((box) => {
-			expect(screen.getByText(box.id)).toBeInTheDocument();
+			const boxElement = screen.getByTestId(box.id);
+			expect(boxElement).toBeInTheDocument();
+			expect(boxElement).toHaveTextContent(box.title);
 		});
+	});
 
-		expect(HashLink).toHaveBeenCalledWith(
-			expect.objectContaining({ to: '#top', smooth: true }),
-			{}
-		);
+	it('scroll to top button works', () => {
+		render(<Main boxList={boxList} />);
 
-		expect(Button).toHaveBeenCalledWith(
-			expect.objectContaining({ buttonConfig: buttonKeys.goToTop }),
-			{}
-		);
+		window.scrollTo = jest.fn();
+
+		const buttonElement = screen.getByTestId('button');
+		fireEvent.click(buttonElement);
+
+		expect(window.scrollTo).toHaveBeenCalledWith({ top: 0 });
 	});
 });

@@ -9,7 +9,7 @@ import { addSkill } from '../../store/skills/skillsThunk';
 import { formFields } from '../../helpers/lists/formFieldsList';
 
 const style = {
-	form: `border border-[#26C17E] p-5 rounded mb-10 mt-10`,
+	form: `border border-[#26C17E] p-5 rounded mt-7`,
 };
 
 export const SkillForm = () => {

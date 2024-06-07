@@ -19,7 +19,10 @@ export const Panel = () => {
 		setIsPanelOpen(!isPanelOpen);
 	};
 	return (
-		<aside className={isPanelOpen ? style.asideClosed : style.asideOpen}>
+		<aside
+			className={isPanelOpen ? style.asideClosed : style.asideOpen}
+			role='complementary'
+		>
 			<Button
 				text=''
 				icon={<FaBars color='white' />}

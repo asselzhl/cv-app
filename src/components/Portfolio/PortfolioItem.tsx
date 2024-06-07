@@ -37,7 +37,11 @@ export const PortfolioItem = ({ project }: PortfolioItemProps) => {
 			onMouseOut={handleMouseOut}
 		>
 			{isHovering && <PortfolioInfo info={project.info} />}
-			<img src={project.imgSrc} alt={project.info.title} />
+			<img
+				src={project.imgSrc}
+				alt={project.info.title}
+				data-testid='project-img'
+			/>
 		</li>
 	);
 };

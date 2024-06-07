@@ -24,7 +24,7 @@ interface BoxProps {
 
 export const Box = ({ box }: BoxProps) => {
 	return (
-		<div id={box.id}>
+		<div id={box.id} data-testid={box.id}>
 			<h2 className={style.title}>{box.title}</h2>
 			{box.content}
 		</div>

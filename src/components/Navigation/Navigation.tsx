@@ -30,7 +30,7 @@ export const Navigation = ({ navList }: NavigationProps) => {
 			<ul className={style.list} data-testid='nav-list'>
 				{navList.map((listItem) => {
 					return (
-						<li key={listItem.text}>
+						<li key={listItem.text} data-testid='list-item'>
 							<a className={style.hashLink} href={`#${listItem.id}`}>
 								<span data-testid='nav-icon'>{listItem.icon}</span>
 								<span className={style.span}>{listItem.text}</span>

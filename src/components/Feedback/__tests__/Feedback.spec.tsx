@@ -25,4 +25,11 @@ describe('Feedback component', () => {
 		const feedbacksListElement = screen.getByTestId('feedbacks-list');
 		expect(feedbacksListElement).toBeInTheDocument();
 	});
+
+	it('renders the correct number of feedbacks', () => {
+		render(<Feedback feedbacksList={feedbacksList} />);
+
+		const feedbackItems = screen.getAllByTestId('feedback-item');
+		expect(feedbackItems.length).toBe(feedbacksList.length);
+	});
 });
