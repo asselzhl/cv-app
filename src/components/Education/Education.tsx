@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { useAppDispatch } from '../../store/store';
+
 import { fetchEducations } from '../../store/education/educationThunk';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
 	getEducationsList,
 	getEducationsStateStatus,
@@ -11,6 +11,7 @@ import { Loading } from '../Loading/Loading';
 
 import { Failed } from '../Failed/Failed';
 import { EducationTimeline } from './EducationTimeline';
+import { AppDispatch } from 'src/store/store';
 
 const style = {
 	wrapper: `h-[30vh] overflow-scroll`,
@@ -20,7 +21,7 @@ const responseFailedMessage =
 	'Something went wrong; please review your server connection!';
 
 export const Education = () => {
-	const dispatch = useAppDispatch();
+	const dispatch = useDispatch<AppDispatch>();
 
 	const educationList = useSelector(getEducationsList);
 	const educationsStateStatus = useSelector(getEducationsStateStatus);

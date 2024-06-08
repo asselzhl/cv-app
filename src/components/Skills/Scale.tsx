@@ -9,7 +9,7 @@ const style = {
 export const Scale = () => {
 	const grades = ['Beginner', 'Proficient', 'Expert', 'Master'];
 	return (
-		<div>
+		<div data-testid='scale'>
 			<div className={style.line}></div>
 			<ul className={style.list}>
 				{grades.map((grade) => {

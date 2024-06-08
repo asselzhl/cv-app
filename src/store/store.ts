@@ -1,5 +1,4 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { useDispatch } from 'react-redux';
 import { educationReducer } from './education/educationSlice';
 import { skillsReducer } from './skills/skillsSlice';
 
@@ -27,38 +26,40 @@ const skillsPersistConfig = {
 	whitelist: ['data'],
 };
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
 	education: educationReducer,
 	skills: persistReducer(skillsPersistConfig, skillsReducer),
 });
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+export const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-export const store = configureStore({
-	reducer: persistedReducer,
-	middleware: (getDefaultMiddleware) =>
-		getDefaultMiddleware({
-			serializableCheck: {
-				ignoredActions: [
-					'fetchEducations/fulfilled',
-					'fetchEducations/rejected',
-					'fetchSkills/fulfilled',
-					'fetchSkills/rejected',
-					'addSkill/rejected',
-					'addSkill/fulfilled',
-					FLUSH,
-					REHYDRATE,
-					PAUSE,
-					PERSIST,
-					PURGE,
-					REGISTER,
-				],
-			},
-		}),
-});
+export const createStore = () =>
+	configureStore({
+		reducer: persistedReducer,
+		middleware: (getDefaultMiddleware) =>
+			getDefaultMiddleware({
+				serializableCheck: {
+					ignoredActions: [
+						'fetchEducations/fulfilled',
+						'fetchEducations/rejected',
+						'fetchSkills/fulfilled',
+						'fetchSkills/rejected',
+						'addSkill/rejected',
+						'addSkill/fulfilled',
+						FLUSH,
+						REHYDRATE,
+						PAUSE,
+						PERSIST,
+						PURGE,
+						REGISTER,
+					],
+				},
+			}),
+	});
+
+export const store = createStore();
 
 export const persistor = persistStore(store);
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
-export const useAppDispatch = useDispatch.withTypes<AppDispatch>();

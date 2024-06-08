@@ -4,16 +4,17 @@ import * as Yup from 'yup';
 
 import { FormFieldWithError } from './FormFieldWithError';
 import { Button } from '../Button/Button';
-import { useAppDispatch } from '../../store/store';
 import { addSkill } from '../../store/skills/skillsThunk';
 import { formFields } from '../../helpers/lists/formFieldsList';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from 'src/store/store';
 
 const style = {
 	form: `border border-[#26C17E] p-5 rounded mt-7`,
 };
 
 export const SkillForm = () => {
-	const dispatch = useAppDispatch();
+	const dispatch = useDispatch<AppDispatch>();
 
 	const formik = useFormik({
 		initialValues: {
@@ -35,7 +36,11 @@ export const SkillForm = () => {
 	});
 
 	return (
-		<form className={style.form} onSubmit={formik.handleSubmit}>
+		<form
+			className={style.form}
+			onSubmit={formik.handleSubmit}
+			data-testid='skill-form'
+		>
 			{formFields.map((field) => {
 				return (
 					<FormFieldWithError
