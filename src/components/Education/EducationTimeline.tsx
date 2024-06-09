@@ -18,7 +18,6 @@ interface EducationItemProps {
 	education: EducationItem;
 }
 
-// TODO
 export const EducationTimeline = ({ education }: EducationItemProps) => {
 	return (
 		<div className={style.timeline}>

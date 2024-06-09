@@ -16,6 +16,7 @@ interface PortfolioProps {
 	filterKeys: FilterKeysItem[];
 }
 
+// TODo: remove Isotope
 export const Portfolio = ({ projectsList, filterKeys }: PortfolioProps) => {
 	const isotope = useRef<Isotope | null>();
 	const [filterKey, setFilterKey] = useState<string>('*');

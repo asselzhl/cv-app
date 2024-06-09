@@ -60,8 +60,11 @@ describe('Skills component', () => {
 
 	it('renders skills when data is fetched successfully', () => {
 		const skillsList = [{ name: 'Skill 1' }, { name: 'Skill 2' }];
-		jest.mocked(useSelector).mockReturnValue(stateStatus.succeeded);
-		jest.mocked(useSelector).mockReturnValue(skillsList);
+		jest
+			.mocked(useSelector)
+			.mockReturnValue(stateStatus.succeeded)
+			.mockReturnValue(skillsList);
+
 		render(
 			<Provider store={store}>
 				<Skills />
@@ -72,8 +75,10 @@ describe('Skills component', () => {
 	});
 
 	it('toggles form visibility', () => {
-		jest.mocked(useSelector).mockReturnValue(stateStatus.succeeded);
-		jest.mocked(useSelector).mockReturnValue([]);
+		jest
+			.mocked(useSelector)
+			.mockReturnValue(stateStatus.succeeded)
+			.mockReturnValue([]);
 
 		render(
 			<Provider store={store}>
