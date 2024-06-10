@@ -19,20 +19,6 @@ jest.mock('../../../helpers/photoBoxMap', () => ({
 				text: 'text-class-1',
 			},
 		},
-		home: {
-			name: 'Jane Smith',
-			title: 'Web Developer',
-			description: '',
-			avatar: 'jane-smith-avatar.jpg',
-			style: {
-				container: 'container-class-2',
-				imgContainer: 'img-container-class-2',
-				img: 'img-class-2',
-				title: 'title-class-2',
-				subtitle: 'subtitle-class-2',
-				text: 'text-class-2',
-			},
-		},
 	},
 }));
 
