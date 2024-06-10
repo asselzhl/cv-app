@@ -5,6 +5,7 @@ import '@testing-library/jest-dom/extend-expect';
 import configureMockStore from 'redux-mock-store';
 import { stateStatus } from '../../../store/constants';
 import { Skills } from '../Skills';
+import { fetchSkills } from '../../../store/skills/skillsThunk';
 
 const mockStore = configureMockStore();
 
@@ -12,6 +13,10 @@ jest.mock('react-redux', () => ({
 	...jest.requireActual('react-redux'),
 	useSelector: jest.fn(),
 	useDispatch: jest.fn(),
+}));
+
+jest.mock('../../../store/skills/skillsThunk', () => ({
+	fetchSkills: jest.fn(),
 }));
 
 jest.mock('../../../components/Loading/Loading', () => ({
@@ -93,18 +98,19 @@ describe('Skills component', () => {
 		expect(screen.queryByTestId('skill-form')).not.toBeInTheDocument();
 	});
 
-	// TODO
-	//   it("dispatches fetchSkills action on mount if skills state status is idle", () => {
-	//     const mockDispatch = jest.fn();
-	//     jest.mocked(useDispatch).mockReturnValue(mockDispatch);
-	//     jest.mocked(useSelector).mockReturnValue(stateStatus.idle);
-	//     jest.mocked(useSelector).mockReturnValue([]);
+	it('dispatches fetchSkills action on mount if skills state status is idle', () => {
+		const mockDispatch = jest.fn();
+		jest.mocked(useDispatch).mockReturnValue(mockDispatch);
+		jest
+			.mocked(useSelector)
+			.mockReturnValueOnce([])
+			.mockReturnValueOnce(stateStatus.idle);
 
-	//     render(
-	//       <Provider store={store}>
-	//         <Skills />
-	//       </Provider>
-	//     );
-	//     expect(mockDispatch).toHaveBeenCalledWith(fetchSkills());
-	//   });
+		render(
+			<Provider store={store}>
+				<Skills />
+			</Provider>
+		);
+		expect(mockDispatch).toHaveBeenCalledWith(fetchSkills());
+	});
 });

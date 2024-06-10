@@ -5,6 +5,7 @@ import '@testing-library/jest-dom/extend-expect';
 import configureMockStore from 'redux-mock-store';
 import { stateStatus } from '../../../store/constants';
 import { Education } from '../Education';
+import { fetchEducations } from '../../../store/education/educationThunk';
 
 const mockStore = configureMockStore();
 
@@ -77,13 +78,19 @@ describe('Education Component', () => {
 		expect(screen.getByText('Education 2')).toBeInTheDocument();
 	});
 
-	//   TODO;
-	//   it("dispatches fetchEducations action on mount if educations state status is idle", () => {
-	//     const mockDispatch = jest.fn();
-	//     jest.mocked(useDispatch).mockReturnValue(mockDispatch);
-	//     jest.mocked(useSelector).mockReturnValue([]);
+	it('dispatches fetchEducations action on mount if educations state status is idle', () => {
+		const mockDispatch = jest.fn();
+		jest.mocked(useDispatch).mockReturnValue(mockDispatch);
+		jest
+			.mocked(useSelector)
+			.mockReturnValueOnce([])
+			.mockReturnValueOnce(stateStatus.idle);
 
-	//     render(<Education />);
-	//     expect(mockDispatch).toHaveBeenCalledWith(fetchEducations());
-	//   });
+		render(
+			<Provider store={store}>
+				<Education />
+			</Provider>
+		);
+		expect(mockDispatch).toHaveBeenCalledWith(fetchEducations());
+	});
 });

@@ -6,16 +6,16 @@ import { Portfolio } from '../Portfolio';
 import { ProjectsItem } from '../../../helpers/lists/projectsList';
 
 jest.mock('../PortfolioItem', () => ({
-	PortfolioItem: jest.fn(({ project }) => (
+	PortfolioItem: ({ project }) => (
 		<li className={`filter-item ${project.type}`}>
 			<div data-testid='portfolio-info'>{project.info.title}</div>
 			<img src={project.imgSrc} alt={project.info.title} />
 		</li>
-	)),
+	),
 }));
 
 jest.mock('../PortfolioInfo', () => ({
-	PortfolioInfo: jest.fn(({ info }) => (
+	PortfolioInfo: ({ info }) => (
 		<div>
 			<div data-testid='portfolio-info-title'>{info.title}</div>
 			<p>{info.description}</p>
@@ -23,7 +23,7 @@ jest.mock('../PortfolioInfo', () => ({
 				View source
 			</a>
 		</div>
-	)),
+	),
 }));
 
 const projectsList: ProjectsItem[] = [
