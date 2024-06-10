@@ -1,10 +1,15 @@
 import { Route, Routes } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { Inner } from './pages/Inner';
-import { routePaths } from './routePaths';
+import { routePaths } from './helpers/routePaths';
+
+interface RoutesConfigItem {
+	path: string;
+	element: JSX.Element;
+}
 
 function App() {
-	const routesConfig = [
+	const routesConfig: RoutesConfigItem[] = [
 		{
 			path: routePaths.home,
 			element: <Home />,
@@ -14,6 +19,7 @@ function App() {
 			element: <Inner />,
 		},
 	];
+
 	return (
 		<Routes>
 			{routesConfig.map((route) => {

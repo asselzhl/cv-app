@@ -1,9 +1,6 @@
-import React from 'react';
-
 import avatar from '../assets/avatar.jpg';
 
 type PhotoBoxKeys = 'home' | 'inner';
-
 interface PhotoBoxValues {
 	name: string;
 	title: string;
@@ -11,8 +8,7 @@ interface PhotoBoxValues {
 	avatar: string;
 	style;
 }
-
-const photoBoxMap: Record<PhotoBoxKeys, PhotoBoxValues> = {
+export const photoBoxMap: Record<PhotoBoxKeys, PhotoBoxValues> = {
 	home: {
 		name: 'Assel Zholaushybay',
 		title: 'Front-end Developer',
@@ -40,22 +36,4 @@ const photoBoxMap: Record<PhotoBoxKeys, PhotoBoxValues> = {
 			title: `text-base md:text-lg lg:text-xl font-bold text-center hidden sm:block`,
 		},
 	},
-};
-
-interface PhotoBoxProps {
-	config: PhotoBoxKeys;
-}
-
-export const PhotoBox = ({ config }: PhotoBoxProps) => {
-	const { name, title, description, avatar, style } = photoBoxMap[config];
-	return (
-		<div className={style.container}>
-			<div className={style.imgContainer}>
-				<img src={avatar} alt={`${name}'s avatar`} className={style.img} />
-			</div>
-			<h1 className={style.title}>{name}</h1>
-			<h2 className={style.subtitle}>{title}</h2>
-			{description && <p className={style.text}>{description}</p>}
-		</div>
-	);
 };

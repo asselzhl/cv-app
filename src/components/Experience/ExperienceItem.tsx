@@ -22,7 +22,7 @@ interface ExperienceItemProps {
 
 export const ExperienceItem = ({ job }: ExperienceItemProps) => {
 	return (
-		<div className={style.wrapper}>
+		<div className={style.wrapper} data-testid='experience-item'>
 			<div className={style.leftCol}>
 				<h4 className={style.title}>{job.info.company}</h4>
 				<h5 className={style.date}>{job.date}</h5>

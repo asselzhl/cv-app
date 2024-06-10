@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Open Sans";
 }
@@ -16,4 +20,19 @@ body {
 }
 .filter-item {
   margin: 10px;
+}
+
+.rotation {
+  animation: spin 4s linear infinite;
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+button:disabled,
+button:disabled:hover {
+  background-color: dimgrey;
 }

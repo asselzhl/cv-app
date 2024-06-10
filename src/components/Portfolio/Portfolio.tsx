@@ -2,14 +2,22 @@ import React, { useEffect, useRef, useState } from 'react';
 import Isotope from 'isotope-layout';
 
 import { PortfolioItem } from './PortfolioItem';
-import { filterKeys, projectsList } from '../../helpers/lists/projectsList';
+import { FilterKeysItem, ProjectsItem } from '../../helpers/lists/projectsList';
+import { Button } from '../Button/Button';
+
 const style = {
 	filterKeysWrapper: `mb-5 flex gap-x-3`,
 	filterKey: `cursor-pointer bg-[#009E60] text-white rounded-full py-1 px-4`,
 	projectsList: `filter-container ml-[-10px]`,
 };
 
-export const Portfolio = () => {
+interface PortfolioProps {
+	projectsList: ProjectsItem[];
+	filterKeys: FilterKeysItem[];
+}
+
+// TODo: remove Isotope
+export const Portfolio = ({ projectsList, filterKeys }: PortfolioProps) => {
 	const isotope = useRef<Isotope | null>();
 	const [filterKey, setFilterKey] = useState<string>('*');
 
@@ -34,18 +42,17 @@ export const Portfolio = () => {
 			<div className={style.filterKeysWrapper}>
 				{filterKeys.map((filterKey) => {
 					return (
-						<span
+						<Button
 							key={filterKey.key}
-							className={style.filterKey}
+							text={filterKey.tag}
 							onClick={handleFilterKeyChange(filterKey.key)}
-						>
-							{filterKey.tag}
-						</span>
+							styleKey='rounded'
+						/>
 					);
 				})}
 			</div>
 
-			<ul className={style.projectsList}>
+			<ul className={style.projectsList} data-testid='projects-list'>
 				{projectsList.map((project) => {
 					return <PortfolioItem key={project.info.title} project={project} />;
 				})}
