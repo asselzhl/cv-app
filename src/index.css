@@ -31,3 +31,8 @@ body {
     transform: rotate(360deg);
   }
 }
+
+button:disabled,
+button:disabled:hover {
+  background-color: dimgrey;
+}
