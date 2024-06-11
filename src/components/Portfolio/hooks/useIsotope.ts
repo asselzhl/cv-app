@@ -1,8 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import Isotope from 'isotope-layout';
 
-
-
 export const useIsotope = () => {
 	const isotope = useRef<Isotope | null>(null);
 	const [filterKey, setFilterKey] = useState<string>('*');
