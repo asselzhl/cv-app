@@ -9,10 +9,15 @@ interface ProjectInfo {
 	link: string;
 }
 
-interface ProjectsItem {
+export interface ProjectsItem {
 	imgSrc: string;
 	type: ProjectType;
 	info: ProjectInfo;
+}
+
+export interface FilterKeysItem {
+	key: string;
+	tag: string;
 }
 
 export const projectsList: ProjectsItem[] = [
@@ -58,7 +63,7 @@ export const projectsList: ProjectsItem[] = [
 	},
 ];
 
-export const filterKeys = [
+export const filterKeys: FilterKeysItem[] = [
 	{
 		key: '*',
 		tag: 'All',

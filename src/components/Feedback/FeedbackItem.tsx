@@ -18,7 +18,7 @@ interface FeedbackItemProps {
 }
 export const FeedbackItem = ({ feedback }: FeedbackItemProps) => {
 	return (
-		<li>
+		<li data-testid='feedback-item'>
 			<p className={style.text}>{feedback.text}</p>
 
 			<div className={style.authorWrapper}>

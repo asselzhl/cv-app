@@ -17,7 +17,7 @@ interface ContactsItemProps {
 
 export const ContactsItem = ({ contact }: ContactsItemProps) => {
 	return (
-		<li>
+		<li data-testid='contact-item'>
 			<a href={contact.href} className={style.link}>
 				{contact.icon}
 				{contact.text}

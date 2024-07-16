@@ -1,14 +1,26 @@
 import React from 'react';
 import { ExperienceItem } from './ExperienceItem';
-import { experienceList } from '../../helpers/lists/experienceList';
 
 const style = {
 	wrapper: `flex flex-col gap-y-8`,
 };
 
-export const Experience = () => {
+interface ExperienceInfo {
+	company: string;
+	title: string;
+	description: string;
+}
+interface ExperienceListItem {
+	date: string;
+	info: ExperienceInfo;
+}
+interface ExperienceProps {
+	experienceList: ExperienceListItem[];
+}
+
+export const Experience = ({ experienceList }: ExperienceProps) => {
 	return (
-		<div className={style.wrapper}>
+		<div className={style.wrapper} data-testid='experience-list'>
 			{experienceList.map((job) => {
 				return <ExperienceItem key={job.date} job={job} />;
 			})}
